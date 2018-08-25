@@ -75,7 +75,7 @@ class CompaniesController extends Controller
     {
 
         //find instance of company model where id
-        $companyUpdate = Company::where('id', $company->id);
+        $companyUpdate = Company::find($company->id);
 
         //update data
         $companyUpdate->update([
@@ -95,11 +95,19 @@ class CompaniesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Company  $company
-     * @return \Illuminate\Http\Response
+     * @param Company $company
+     * @return \Illuminate\Http\RedirectResponse
+     * @throws \Exception
      */
     public function destroy(Company $company)
     {
-        //
+        $findCompany = Company::find($company->id);
+        if($findCompany->delete()){
+            return redirect()->route('companies.index')
+                             ->with('success', 'Company deleted successfully');
+        }
+
+        return back()->withInput()->with('error', 'COmpany could not be deleted');
     }
+
 }
