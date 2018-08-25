@@ -29,6 +29,9 @@
             <h4>Actions</h4>
             <ol class="list-unstyled">
                 <li><a href="/companies/{{$company->id}}/edit">Edit</a></li>
+                <li><a href="/projects/create">Add Project</a></li>
+                <li><a href="/companies">List of companies</a></li>
+                <br/>
                 <li>
                     <a
                         href="#"

@@ -24,7 +24,7 @@
 
                         <div class="form-group">
                             <label for="company-content">Description</label>
-                            <textarea placeholder="Enter Name"
+                            <textarea placeholder="Enter Description"
                                    id="company-content"
                                    name="description"
                                    rows="5"
@@ -51,7 +51,7 @@
             <h4>Actions</h4>
             <ol class="list-unstyled">
                 <li><a href="/companies/{{$company->id}}">View Company</a></li>
-                <li><a href="/companies">All Companies</a></li>
+                <li><a href="/companies">List of Companies</a></li>
             </ol>
         </div>
 
