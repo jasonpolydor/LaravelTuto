@@ -4,21 +4,9 @@
     <div class="col-sm-9 col-md-9 col-lg-9 pull-left">
         <!-- Jumbotron -->
         <div class="jumbotron">
-            <h1>{{ $company->name }}</h1>
-            <p class="lead">{{$company->description}}</p>
+            <h1>{{ $project->name }}</h1>
+            <p class="lead">{{$project->description}}</p>
             {{--<p><a class="btn btn-lg btn-success" href="#" role="button">Get started today</a></p>--}}
-        </div>
-
-        <!-- Example row of columns -->
-        <div class="row">
-            <a class="btn btn-primary btn-sm pull-right" href="/projects/create/{{$company->id}}">Add Project</a>
-            @foreach($company->projects as $project)
-                <div class="col-lg-4 col-md-4 col-sm-4">
-                    <h2>{{ $project->name }}</h2>
-                    <p>{{ $project->description }}</p>
-                    <p><a class="btn btn-primary" href="/projects/{{ $project->id }}" role="button">View Project »</a></p>
-                </div>
-            @endforeach
         </div>
     </div>
     <div class="col-sm-3  col-md-3 col-lg-3 pull-right">
@@ -29,8 +17,8 @@
         <div class="sidebar-module">
             <h4>Actions</h4>
             <ol class="list-unstyled">
-                <li><a href="/companies/{{$company->id}}/edit">Edit</a></li>
-                <li><a href="/companies">List of companies</a></li>
+                <li><a href="/projects/{{$project->id}}/edit">Edit</a></li>
+                <li><a href="/projects">List of projects</a></li>
                 <br/>
                 <li>
                     <a
@@ -45,7 +33,7 @@
                     >
                         Delete
                     </a>
-                    <form method="post" id="delete-form" action="{{ route('companies.destroy', [$company->id]) }}"
+                    <form method="post" id="delete-form" action="{{ route('projects.destroy', [$project->id]) }}"
                           style="display: none;"
                     >
                         <input type="hidden" name="_method" value="delete">
@@ -59,7 +47,7 @@
         {{--<div class="sidebar-module">--}}
             {{--<h4>Members</h4>--}}
             {{--<ol class="list-unstyled">--}}
-                {{--@foreach($company->users as $user)--}}
+                {{--@foreach($project->users as $user)--}}
                 {{--<li><a href="#">{{ $user->name }}</a></li>--}}
                 {{--@endforeach--}}
             {{--</ol>--}}
