@@ -7,6 +7,46 @@
             <h1>{{ $project->name }}</h1>
             <p class="lead">{{$project->description}}</p>
             {{--<p><a class="btn btn-lg btn-success" href="#" role="button">Get started today</a></p>--}}
+
+            <br/>
+            <div class="row">
+            <form method="post" action="{{route('comments.store')}}">
+                {{ csrf_field() }}
+
+                <input type="hidden" name="commentable" value="Project">
+                <input type="hidden" name="commentable_id" value="{{$project->id}}">
+
+
+                <div class="form-group">
+                    <label for="comment-content">Comment</label>
+                    <textarea placeholder="Enter comment"
+                              id="comment-content"
+                              name="url"
+                              rows="3"
+                              spellcheck="false"
+                              class="form-control autosize-target text-left"
+                    >
+                        </textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="url-content">Proof of work done (Url/Photos) </label>
+                    <textarea placeholder="Enter url or screenshots"
+                              id="url-content"
+                              name="url"
+                              rows="2"
+                              spellcheck="false"
+                              class="form-control autosize-target text-left"
+                    >
+                        </textarea>
+                </div>
+
+
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary" value="Submit">
+                </div>
+            </form>
+            </div>
         </div>
     </div>
     <div class="col-sm-3  col-md-3 col-lg-3 pull-right">
