@@ -8,9 +8,9 @@
                 <form method="post" action="{{route('projects.store')}}">
                     {{ csrf_field() }}
                     <div class="form-group">
-                        <label for="company-name">Name<span class="required">*</span></label>
+                        <label for="project-name">Name<span class="required">*</span></label>
                         <input placeholder="Enter Name"
-                               id="company-name"
+                               id="project-name"
                                required
                                name="name"
                                spellcheck="false"
@@ -25,10 +25,21 @@
                         />
                     </div>
 
+                    @if($companies != null)
                     <div class="form-group">
-                        <label for="company-content">Description</label>
+                        <label for="company-content">Select company</label>
+                        <select name="company_id" class="form-control">
+                            @foreach($companies as $company)
+                            <option value="{{$company->id}}">{{$company->name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    @endif
+
+                    <div class="form-group">
+                        <label for="project-content">Description</label>
                         <textarea placeholder="Enter Description"
-                                  id="company-content"
+                                  id="project-content"
                                   name="description"
                                   rows="5"
                                   spellcheck="false"

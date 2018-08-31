@@ -9,11 +9,11 @@
             {{--<p><a class="btn btn-lg btn-success" href="#" role="button">Get started today</a></p>--}}
 
             <br/>
-            <div class="row">
+            <div class="row container-fluid">
             <form method="post" action="{{route('comments.store')}}">
                 {{ csrf_field() }}
 
-                <input type="hidden" name="commentable" value="Project">
+                <input type="hidden" name="commentable_type" value="Project">
                 <input type="hidden" name="commentable_id" value="{{$project->id}}">
 
 
@@ -21,7 +21,7 @@
                     <label for="comment-content">Comment</label>
                     <textarea placeholder="Enter comment"
                               id="comment-content"
-                              name="url"
+                              name="body"
                               rows="3"
                               spellcheck="false"
                               class="form-control autosize-target text-left"
