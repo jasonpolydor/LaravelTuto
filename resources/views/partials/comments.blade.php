@@ -8,12 +8,11 @@
                 <div class="media">
                     <div class="media-body">
                         <a href="users/{{$comment->user->id}}">
-                            {{$comment->user->first_name}} {{$comment->user->last_name}} - {{$comment->user->email}}
+                            {{$comment->user->first_name}} {{$comment->user->last_name}} - {{$comment->user->email}} <small>commented on {{$comment->created_at}}</small>
                         </a>
 
-                        <p>{{$comment->body}}</p>
+                        <h4>{{$comment->body}}</h4>
                         <p class="text-danger">{{$comment->url}}</p>
-                        <p>commented on {{$comment->created_at}}</p>
                     </div>
                 </div>
             @endforeach

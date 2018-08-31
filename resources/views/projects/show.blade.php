@@ -9,6 +9,8 @@
             {{--<p><a class="btn btn-lg btn-success" href="#" role="button">Get started today</a></p>--}}
 
             <br/>
+            @include('partials.comments')
+
             <div class="row container-fluid">
             <form method="post" action="{{route('comments.store')}}">
                 {{ csrf_field() }}
@@ -48,9 +50,6 @@
             </form>
             </div>
         </div>
-
-        @include('partials.comments')
-
     </div>
     <div class="col-sm-3  col-md-3 col-lg-3 pull-right">
         {{--<div class="sidebar-module sidebar-module-inset">--}}
