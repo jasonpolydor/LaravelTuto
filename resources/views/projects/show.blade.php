@@ -13,7 +13,7 @@
             <form method="post" action="{{route('comments.store')}}">
                 {{ csrf_field() }}
 
-                <input type="hidden" name="commentable_type" value="Project">
+                <input type="hidden" name="commentable_type" value="App\Project">
                 <input type="hidden" name="commentable_id" value="{{$project->id}}">
 
 
@@ -48,6 +48,9 @@
             </form>
             </div>
         </div>
+
+        @include('partials.comments')
+
     </div>
     <div class="col-sm-3  col-md-3 col-lg-3 pull-right">
         {{--<div class="sidebar-module sidebar-module-inset">--}}
